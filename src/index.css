@@ -1,13 +1,94 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* font-family: 'Kumbh Sans', sans-serif; */
+
+:root {
+  /* ### Primary */
+
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%);
+
+  /* ### Neutral */
+
+  --Very-vark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%); /* (with 75% opacity for lightbox background) */
+}
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ol,
+ul {
+  list-style-type: none;
+}
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 1rem;
+  background-color: var(--White);
+  font-family: 'Kumbh Sans', sans-serif;
+}
+.container {
+  width: 95%;
+  max-width: 1280px;
+  margin: 20px auto;
+}
+.inner__container {
+  padding: 30px;
+  background-color: var(--Very-vark-blue);
+  color: var(--White);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: minmax(100px, auto);
+  gap: 8px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.make__grid {
+  border: 1px solid var(--Dark-grayish-blue);
+  padding: 8px 6px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.header p {
+  font-size: 12px;
+}
+.email {
+  font-size: 12px;
+}
+.btn__flex {
+  margin-top: 10px;
+}
+.btn__flex button {
+  color: var(--White);
+  margin-top: 15px;
+}
+@media (max-width: 900px) {
+  .inner__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .inner__container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
